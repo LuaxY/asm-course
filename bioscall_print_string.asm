@@ -2,9 +2,9 @@ org 0x0100 ; header .COM
 
 ; -- SHOW STRING ON SCREEN --
 mov si, hello ; store address of hello string in SI register
-xor bh, bh ; reset BH register, who stock  display page
-mov ah, 0x03 ; ??
-int 0x10 ; call BIOS interruption for displaying char on screen
+xor bh, bh ; reset BH register, who stock display page
+mov ah, 0x03 ; get cursor positon
+int 0x10 ; call BIOS interruption
 mov cx, 1 ; char repetition
 
 display_next:
